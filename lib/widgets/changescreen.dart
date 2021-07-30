@@ -25,7 +25,7 @@ class ChangeScreen extends StatelessWidget {
             child: Text(
               name,
               style: TextStyle(
-                  color: Colors.cyan,
+                  color: Color(0xFF578748),
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),

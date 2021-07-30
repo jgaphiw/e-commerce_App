@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/LoginPage.dart';
+import 'package:flutter_application_1/screens/HomeP1.dart';
+
+//import 'package:flutter_application_1/screens/LoginPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,11 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //ซ่อนแทบมุมขวา
-      theme: ThemeData(
-          primaryColor: Colors.purple,
-          scaffoldBackgroundColor: Colors.white,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: Login(),
+
+      home: HomeP1(),
     );
   }
 }

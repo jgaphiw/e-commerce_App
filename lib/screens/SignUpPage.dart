@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/LoginPage.dart';
 import 'package:flutter_application_1/widgets/changescreen.dart';
@@ -30,7 +29,7 @@ class _SignUpState extends State<SignUp> {
 
   Widget _buildAllTextFormField() {
     return Container(
-      height: 300,
+      height: 250,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -96,10 +95,9 @@ class _SignUpState extends State<SignUp> {
 
   Widget _buildButtompart() {
     return Container(
-      height: 400,
+      height: MediaQuery.of(context).size.height * 0.50,
       margin: EdgeInsets.symmetric(horizontal: 10),
       width: double.infinity,
-      //color: Colors.yellow,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -128,30 +126,56 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       resizeToAvoidBottomInset: false, //ขอบแป้นพิมไม่เกิน
       body: SafeArea(
-        child: Form(
-          key: _formKey,
-          child: Container(
-            child: Column(
-              children: [
-                Container(
-                  height: 220,
-                  width: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Register',
-                        style: TextStyle(
-                            fontSize: 50, fontWeight: FontWeight.bold),
-                      )
-                    ],
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Container(
+              //padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFECD59F),
+                  Color(0xFFF8F8F8),
+                ],
+              )),
+              child: Column(
+                children: [
+                  Container(
+                    child: SizedBox(height: 50),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                _buildButtompart(),
-              ],
+                  Container(
+                    width: 190,
+                    margin: EdgeInsets.all(5),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.asset(
+                        "assets/images/logo11.png",
+                        height: 150,
+                        width: 120,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      children: [
+                        Text(
+                          "SUPA",
+                          style: TextStyle(
+                            color: Colors.brown.shade400,
+                            fontSize: 45,
+                            fontWeight: FontWeight.w300,
+                            height: 2,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  _buildButtompart(),
+                ],
+              ),
             ),
           ),
         ),
